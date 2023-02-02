@@ -1,7 +1,15 @@
-import Home from '../components/Home';
+import Head from "next/head";
+import Home from "../components/Home";
 
-function Index() {
-  return <Home />;
+function DashboardPage() {
+  return (
+    <>
+      <Head>
+        <title> Dashboard / IA Project</title>
+      </Head>
+      <Home />
+    </>
+  );
 }
 
-export default Index;
+export default DashboardPage;
