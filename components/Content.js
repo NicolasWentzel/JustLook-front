@@ -22,7 +22,6 @@ const Content = () => {
   const [showResult, setShowResult] = useState(false);
 
   const handleSubmit = () => {
-    console.log("submit");
     event.preventDefault();
     setShowResult(true);
     setLoading(true);
@@ -41,13 +40,13 @@ const Content = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setGeneratedText(data);
         setMarie("");
         setFemme("");
         setRelation("");
         setRole("");
-        setStyle("");
+        setSelectedStyles("");
+        setSelectedCitations("");
         setAnecdotes("");
         setLoading(false);
       });
@@ -55,8 +54,12 @@ const Content = () => {
 
   const roles = [
     "Qui êtes-vous ?",
+    "le marié",
+    "la mariée",
     "le père",
     "la mère",
+    "le fils",
+    "la fille",
     "le frère",
     "la soeur",
     "le grand-père",
@@ -131,22 +134,16 @@ const Content = () => {
     setSelectedCitations(selectedCitations.filter((c) => c !== citation));
   };
 
-  console.log(
-    marie,
-    femme,
-    relation,
-    selectedStyles,
-    selectedCitations,
-    anecdotes
-  );
-  console.log(generatedText);
-
   return (
     <>
-      <Nav title={"Mariage"} />
+      <Nav title={"Wedding Speech"} />
       <section className="bg-gray-900 flex flex-col min-h-screen items-center mt-24">
         <div className="py-8 px-4 max-w-2xl lg:py-16 w-full ">
-          <h2 className=" mb-5 text-2xl font-bold text-white ">Mariage</h2>
+          {/* <h2 className=" mb-5 text-2xl font-bold text-white ">Mariage</h2> */}
+          <p className="font-light sm:text-xl text-gray-400 mb-5">
+            Vous devez prendre la parole pour un mariage ? Vous êtes au bon
+            endroit. Remplissez les champs et laissez-vous guider ...
+          </p>
           <form action="#">
             <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
               <div className="w-full">
@@ -206,6 +203,7 @@ const Content = () => {
                   newItem={newStyle}
                   select={selectedStyles}
                   deleteItem={deleteStyle}
+                  dropDownToggle={"dropdown-toggle-1"}
                 />
               </div>
               <div>
@@ -215,6 +213,7 @@ const Content = () => {
                   newItem={newCitation}
                   select={selectedCitations}
                   deleteItem={deleteCitation}
+                  dropDownToggle={"dropdown-toggle-2"}
                 />
               </div>
               <div className="sm:col-span-2">
@@ -229,13 +228,13 @@ const Content = () => {
               </div>
             </div>
             <Button type="submit" onClick={(e) => handleSubmit(e)}>
-              Générer ton discours !
+              Générez votre discours !
             </Button>
           </form>
 
           {showResult ? (
             loading ? (
-              <Paragraphe>Chargement en cours...</Paragraphe>
+              <Paragraphe chargement>Chargement en cours...</Paragraphe>
             ) : (
               <Paragraphe>
                 <Markdown option={{ html: true }}>{generatedText}</Markdown>

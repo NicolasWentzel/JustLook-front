@@ -1,6 +1,6 @@
 import React from "react";
 
-function Checkbox({ items, select, newItem, deleteItem }) {
+function Checkbox({ items, select, newItem, deleteItem, dropDownToggle }) {
   const toggleSelectedItems = (data) => {
     if (select.includes(data)) {
       deleteItem(data);
@@ -36,7 +36,7 @@ function Checkbox({ items, select, newItem, deleteItem }) {
     <>
       <button
         id="dropdownSearchButton"
-        data-dropdown-toggle="dropdownSearch"
+        data-dropdown-toggle={dropDownToggle}
         className=" flex justify-between border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white"
         type="button"
       >
@@ -58,7 +58,7 @@ function Checkbox({ items, select, newItem, deleteItem }) {
         </svg>
       </button>
       <div
-        id="dropdownSearch"
+        id={dropDownToggle}
         className="z-10 hidden overflow-y-scroll h-48 rounded-lg shadow w-72 bg-gray-700"
       >
         <ul className="text-xs font-medium text-gray-900">{checkbox}</ul>

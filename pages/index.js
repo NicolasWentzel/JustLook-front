@@ -1,13 +1,13 @@
 import Head from "next/head";
-import Home from "../components/Home";
+import Content from "../components/Content";
 
 function DashboardPage() {
   return (
     <>
       <Head>
-        <title> Dashboard / IA Project</title>
+        <title> Home / IA Project</title>
       </Head>
-      <Home />
+      <Content />
     </>
   );
 }
