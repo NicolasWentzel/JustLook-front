@@ -5,7 +5,7 @@ function DashboardPage() {
   return (
     <>
       <Head>
-        <title> Home / IA Project</title>
+        <title> Wedding Speech</title>
       </Head>
       <Content />
     </>
