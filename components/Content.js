@@ -27,7 +27,10 @@ const Content = () => {
     setLoading(true);
     fetch("https://just-look-back.vercel.app/content/mariage", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({
         marie,
         femme,
