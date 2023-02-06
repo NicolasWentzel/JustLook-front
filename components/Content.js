@@ -29,7 +29,7 @@ const Content = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": " https://wedding-speech.vercel.app/",
       },
       body: JSON.stringify({
         marie,
