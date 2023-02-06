@@ -25,7 +25,7 @@ const Content = () => {
     event.preventDefault();
     setShowResult(true);
     setLoading(true);
-    fetch("https://wedding-back-phi.vercel.app/content/mariage", {
+    fetch("https://wedding-speech-back.vercel.app/content/mariage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
