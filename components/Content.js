@@ -25,7 +25,7 @@ const Content = () => {
     event.preventDefault();
     setShowResult(true);
     setLoading(true);
-    fetch("http://localhost:3000/content/mariage", {
+    fetch("https://just-look-back.vercel.app/content/mariage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
