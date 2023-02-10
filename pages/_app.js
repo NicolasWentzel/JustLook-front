@@ -28,6 +28,8 @@ function App({ Component, pageProps }) {
       <PersistGate persistor={persistor}>
         <Head>
           <title>IA PROJECT</title>
+          <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#90cdf4" />
         </Head>
         <Component {...pageProps} />
       </PersistGate>
