@@ -1,0 +1,16 @@
+{
+  "name": "Wedding-Speech",
+  "short_name": "Wedding-Speech",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#90cdf4",
+  "theme_color": "#90cdf4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
